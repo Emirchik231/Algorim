@@ -6,7 +6,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QFontDatabase
 
 from design import Ui_MainWindow
-
+ #Действия
 operations = {
     '+': add,
     '−': sub,
@@ -30,7 +30,7 @@ class Calculator(QMainWindow):
         self.entry = self.ui.le_entry
         self.temp = self.ui.lbl_temp
         self.entry_max_len = self.entry.maxLength()
-
+#привязка кнопок
         QFontDatabase.addApplicationFont("fonts/Rubik-Regular.ttf")
 
         self.ui.btn_0.clicked.connect(self.add_digit)
@@ -232,7 +232,7 @@ class Calculator(QMainWindow):
 
         color = 'color: #888;' if disable else 'color: white;'
         self.change_buttons_color(color)
-
+#стиль кнопок
     def change_buttons_color(self, css_color: str) -> None:
         self.ui.btn_calc.setStyleSheet(css_color)
         self.ui.btn_add.setStyleSheet(css_color)
